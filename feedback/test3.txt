@@ -1,0 +1,1 @@
+Next nodemon to bind folders locally ; bind mount 
