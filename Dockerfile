@@ -6,6 +6,7 @@ WORKDIR /myjsapp
 # Install app dependencies
 COPY package.json /myjsapp
 RUN npm install
+RUN npm install -g nodemon
 
 # Copy app source code
 COPY . /myjsapp
@@ -16,5 +17,8 @@ COPY . /myjsapp
 # App binds to port 80
 EXPOSE 80
 
-# Start the app
-CMD ["node", "server.js"]
+# Start the app in dev
+CMD ["nodemon", "server.js"]
+
+# Start the app in prod
+#CMD ["node", "server.js"]
